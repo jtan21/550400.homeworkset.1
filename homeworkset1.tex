@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{listings}
+\usepackage[pdftex]{graphicx}
 \usepackage[colorlinks=true,pagebackref,linkcolor=blue]{hyperref}
 \textwidth=7in
 \textheight=9.5in
@@ -81,26 +82,11 @@ extendedchars=true
 \\*\verb+git log --graph --onelinee+
 
 
-\vskip0.25in Graphs
-\\* Master graph
-\\* *
-\\* $|$
-\\* *
-\\* $|$ \textbackslash
-\\* $|$ *
-\\* * $|$
-\\* $|$ /
-\\* *
-\\* $|$
-\\* *
+\vskip0.25in Fig 1. Master Graph
+\includegraphics{fig1.png}
 
-\vskip.25in Branch graph
-\\* *
-\\* $|$
-\\* *
-\\* $|$
-\\* *
-
+\vskip.25in Fig 2. Branch graph
+\includegraphics{fig2.png}
 
 \vskip.25in
 \noindent\textbf{Problem 2 (10 pts):}
@@ -140,11 +126,11 @@ d
 \vskip0.25in
 \noindent\textbf{Problem 4 (aka.\ Fair Play, 40 pts):}
 \vskip0.25in Is the tennis game fair? To answer this question, we have to define what fair means. This is the problem statement: No matter if a player serves first or second, his probability of winning the entire match is 0.5. We have to make many assumptions to build this model. We assume that both players are equally skilled, have the same skill set (offensive and defensive), and that serving first gives an advantage in winning that point. 
-\vskip0.25in In order to proveed, we have to clarify the point system of a tennis match. A tennis match is composed of points, games and sets. Assuming a best of 5 format, a player has to win 3 sets to win the match. To win a set, a player has to be the first to win at least 6 games and by at least 2 games. If both players have won 6 games each in a single set, they head for a tiebreak where the player wins the set by scoring at least 7 points and winning by at least 2 points in this tiebreak game. The player who is supposed to serve in the next game serves in this tiebreak game. In a normal non-tiebreak game, players win the game by scoring at least 4 points and by at least 2 points. 
+\vskip0.25in In order to proved, we have to clarify the point system of a tennis match. A tennis match is composed of points, games and sets. Assuming a best of 5 format, a player has to win 3 sets to win the match. To win a set, a player has to be the first to win at least 6 games and by at least 2 games. If both players have won 6 games each in a single set, they head for a tiebreak where the player wins the set by scoring at least 7 points and winning by at least 2 points in this tiebreak game. The player who is supposed to serve in the next game serves in this tiebreak game. In a normal non-tiebreak game, players win the game by scoring at least 4 points and by at least 2 points. 
 \vskip0.25inGiven this information, the exogenous variables are the points, games, sets and to whom the service is awarded to in each of these, whether it is player A or player B.  The endogenous variable will be the winner of the match, given whether player A or player B serves. 
 \vskip0.25inTo make it easier to visualize, we assume that serving a game is advantageous, and a player is sure to win the game if he starts serving first. If player 1 serves first, he will win the first set (1-0), However, player 2 will serve the second set and equalize the score (1-1). This will go on until both players are tied 6-6, since player 2 will keep equalizing any point that player 1 wins. In a tiebreak game, player 1 serves first and will win the first point. Player 2 will then serve the next 2 points and it will be 3-2. Player 1 has 2 turns next to serve and it will be 3-4. It will keep equalizing by twos in this manner and there is no way for either player to win by 2 points to break this tie.  Considering that there is no causal relationship between a player's performance and the previous point (no psychological/tiredness effect), the tiebreak structure (need to win by at least 2 points) prevents any unfair advantage from serving first, if both players are equally matched in skill.
 \vskip0.25in However, it is likely that there does exist a correlation between a player's performance and the result of the previous point played. One might be highly motivated to perform even better if he performs well in the previous set. He might also be spurred to perform better if he lost the previous set. This correlation is highly qualitative and depends on the players' psychological mentality.There are also many other factors that come into effect regarding the advantage of serving first. If one is a defensive player, it might be more advantageous to serve second, or if one has a weak serve, it is impossible to determine if one will surely win the game if one serves it. Thus, modeling this problem is not very useful as it does not provide much information. Also, since there are so many assumptions, it is difficult to have any concrete conclusions from this. 
-\vskip0.25in We can also attempt to test this model out, to see if there is a differet whether a player serves first. According to our theory, it should not make a differentce whether or not a player serves first. We could try to pitch 2 players of the same level against each other and make them play many matches. However this is not practical. Alternatively, we can look at results of past tennis matches against the top players in the world, since they should be pretty much equally matched. However this might also not be very accurate, as it would be difficult to determine if they have similar styles of playing (offensive/defensive etc).
+\vskip0.25in We can also attempt to test this model out, to see if there is a differet whether a player serves first. According to our theory, it should not make a differentiate whether or not a player serves first. We could try to pitch 2 players of the same level against each other and make them play many matches. However this is not practical. Alternatively, we can look at results of past tennis matches against the top players in the world, since they should be pretty much equally matched. However this might also not be very accurate, as it would be difficult to determine if they have similar styles of playing (offensive/defensive etc).
 \vskip0.25in This model would be more conclusive if we can somehow quantify the behavior of all players depending on the performance of the previous set. Then again, it is difficult to lump all players into one category and at the end of the day, the game favors the player who can perform well despite the circumstanfes, no matter the result of the previous point. Thus, in this sense, tennis is fair, since serving first does not offer any significant advantage. 
 
 
